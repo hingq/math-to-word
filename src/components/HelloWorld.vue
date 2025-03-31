@@ -60,32 +60,16 @@ watch(
 </script>
 <template>
   <div class="card">
-    <input
-      v-model="count"
-      autocomplete="off"
-      autofocus
-      placeholder="Enter your math expression here"
-      type="text"
-    />
+    <input v-model="count" autocomplete="off" autofocus class="card-body" placeholder="Enter your math expression here"
+      type="text" />
     <div id="content">
       <div class="header">
         <div class="copy" @click="copyFunc">
           <span v-if="showCopy">
-            <svg
-              fill="none"
-              height="24"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
               <rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
-              <path
-                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-              ></path>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
             </svg>
           </span>
           <span v-else> 🎉 </span>
@@ -100,9 +84,9 @@ watch(
 /* 页面整体居中 */
 .card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   width: 100vw;
 }
 
@@ -118,14 +102,14 @@ watch(
 
 /* 文字输入框 */
 .card-body {
-  background: #1a1a1a;
-  width: 100%;
+  background: #ccc;
+
   min-height: 40px;
   padding-left: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
   height: 36px;
-  width: 23vw;
+  width: 26vw;
   max-width: 460px;
   min-width: 320px;
   font-size: 16px;
@@ -134,7 +118,11 @@ watch(
 }
 
 input:focus {
-  border: 1px solid rgba(32, 135, 203, 0.75);
+  border: 1px solid rgba(32, 135, 203, 1);
+  outline: none;
+  /* 移除默认的 outline */
+  box-shadow: 0 0 5px rgba(32, 135, 203, 0.5);
+  /* 增加更明显的焦点效果 */
 }
 
 #content {
@@ -142,10 +130,12 @@ input:focus {
   min-height: 100px;
   min-width: 320px;
   max-width: 640px;
+  width: 27vw;
   margin-top: 20px;
   font-size: 24px;
   color: #333;
   border-radius: 8px;
+  background: #ccc;
   border: 1px solid rgba(32, 135, 203, 0.75);
 }
 
@@ -169,8 +159,10 @@ svg {
 
 .subcontent {
   margin-top: 35px;
-  max-width: inherit;
+  max-width: 640px;
+  width: 20vw;
   white-space: pre-wrap;
-  word-break: break-all; /* 允许长单词或公式内断行 */
+  word-break: break-all;
+  /* 允许长单词或公式内断行 */
 }
 </style>
