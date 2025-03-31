@@ -23,9 +23,25 @@ a:hover {
     color: #535bf2;
 }
 
+html，body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
+}
+
+html,
+body {
+    overflow: hidden;
+    box-sizing: content-box;
 }
 
 button {
@@ -49,17 +65,21 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
-html {
-    overflow: hidden;
+.card {
+    padding: 2em;
 }
 
 #app {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 2rem;
     margin: 0 auto;
-    text-align: left;
-}
-
-::-webkit-scrollbar {
-    display: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 @media (prefers-color-scheme: light) {
