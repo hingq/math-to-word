@@ -1,18 +1,25 @@
 <template>
-  <div class="container">
-    <h1 class="title">Mathify</h1>
-    <p class="description">
-      使用Latex语法将其转化为数学公式。兼容word🎊<br />问题反馈请点击右下角🚀
-    </p>
+  <div class="main">
+    <div class="container">
+      <div>
+        <h1 class="title">Mathify</h1>
+        <p class="description">
+          使用Latex语法将其转化为数学公式。兼容word🎊<br/>问题反馈请点击右下角🚀or<br></br>
+          <em>amazyko@foxmail.com</em>
+        </p>
+      </div>
+    </div>
+    <common></common>
   </div>
 </template>
 
 <script setup>
+import Common from "./common.vue";
+
 const startUsing = () => {
   // 处理开始使用逻辑
   console.log("开始使用");
 };
-
 const viewTutorial = () => {
   // 处理查看教程逻辑
   console.log("查看教程");
@@ -20,7 +27,20 @@ const viewTutorial = () => {
 </script>
 
 <style scoped>
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  gap: 9vw;
+  padding: 2em;
+}
+
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 1;
   background: transparent;
@@ -28,7 +48,6 @@ const viewTutorial = () => {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   padding: 3rem;
   margin: 2rem;
-  max-width: 640px;
   max-width: 640px;
   width: 70vw;
 }
@@ -49,7 +68,7 @@ const viewTutorial = () => {
 }
 
 p {
-  color: #ccc;
+  color: #7c8183;
   font-size: 14px;
 }
 
@@ -58,6 +77,13 @@ p {
   .container {
     margin: 1rem;
     padding: 2rem;
+  }
+
+  .main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
 
   .background {

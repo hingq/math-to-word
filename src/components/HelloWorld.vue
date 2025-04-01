@@ -60,16 +60,33 @@ watch(
 </script>
 <template>
   <div class="card">
-    <input v-model="count" autocomplete="off" autofocus class="card-body" placeholder="Enter your math expression here"
-      type="text" />
+    <input
+      v-model="count"
+      autocomplete="off"
+      autofocus
+      class="card-body"
+      placeholder="Enter your math expression here"
+      type="text"
+    />
     <div id="content">
       <div class="header">
         <div class="copy" @click="copyFunc">
           <span v-if="showCopy">
-            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              <path
+                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+              ></path>
             </svg>
           </span>
           <span v-else> 🎉 </span>
@@ -102,7 +119,7 @@ watch(
 
 /* 文字输入框 */
 .card-body {
-  background: #ccc;
+  //background: #ccc;
 
   min-height: 40px;
   padding-left: 10px;
@@ -114,7 +131,6 @@ watch(
   min-width: 320px;
   font-size: 16px;
   letter-spacing: 1px;
-  font-family: Consolas, "Microsoft YaHei UI", sans-serif;
 }
 
 input:focus {
@@ -135,7 +151,7 @@ input:focus {
   font-size: 24px;
   color: #333;
   border-radius: 8px;
-  background: #ccc;
+  //background: #ccc;
   border: 1px solid rgba(32, 135, 203, 0.75);
 }
 
@@ -164,5 +180,15 @@ svg {
   white-space: pre-wrap;
   word-break: break-all;
   /* 允许长单词或公式内断行 */
+}
+
+@media (prefers-reduced-motion: dark) {
+  .card-body {
+    background: #f8f9fa;
+  }
+
+  #content {
+    background: #f8f9fa;
+  }
 }
 </style>
